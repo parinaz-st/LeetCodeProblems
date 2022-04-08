@@ -15,38 +15,110 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class TwoSum {
+    public  static int[] twoSum(int[] nums, int target) {
+        int [] result= new int[2];
+
+        for (int i = 0; i<nums.length; i++)
+        {
+            for(int j = i+1; j< nums.length; j++)
+            {
+                if (nums[i] + nums[j] == target)
+                {
+                    result[0] = i;
+                    result[1] =j;
+                    return  result;
+                }
+
+            }
+        }
+        return result;
+    }
     public static void main(String[] args) throws IOException {
+
+        int target;
+        String lineForNumbers;
+        String lineForTarget;
+        int[] numArray;
+        String [] inputArray;
+        int [] result;
+
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter NUmbers: ");
-        String line = bufferedReader.readLine();
-        String [] inputArray = line.split(" ");
+        lineForNumbers = bufferedReader.readLine();
+        inputArray = lineForNumbers.split(" ");
 
+        numArray = generateNumArray(inputArray);
+        if (numArray == null)
+            return;
 
-        int arraySize = inputArray.length;
-        if(arraySize != 0)
+        System.out.println("Please Enter Target value: ");
+        lineForTarget = bufferedReader.readLine();
+
+        try
         {
-            int[] array = new int[arraySize];
-            for (int i = 0 ; i < arraySize; i++)
+            target = Integer.parseInt(lineForTarget);
+        }
+        catch (Exception ex)
+        {
+            System.out.println("target is not valid integer");
+            return;
+        }
+
+        if(target <=  -Math.pow(-10,4) || target >=  Math.pow(10,4))
+        {
+            System.out.println("target is not in the valid range.");
+            return;
+        }
+
+        result =  twoSum(numArray, target);
+        System.out.println("the indices are : " + "num[" +result[0]+"," +result[1] +"]" );
+    }
+
+    public static int [] generateNumArray(String [] inputArray)
+    {
+
+        int arraySize;
+        int[] numArray;
+
+        try
+        {
+            arraySize = inputArray.length;
+        }
+        catch (Exception ex)
+        {
+            System.out.println("target is not valid integer");
+            return null;
+        }
+        if(arraySize < 2 || arraySize > 10000)
+        {
+            System.out.println("array size is not valid");
+            return null;
+        }
+
+        numArray = new int[arraySize];
+        for (int i = 0 ; i < arraySize; i++)
+        {
+            try
             {
-                try
+                numArray[i] =Integer.parseInt(inputArray[i]);
+                if (!(numArray[i] >= Math.pow(-10, 9) && numArray[i] <= Math.pow(10,9)))
                 {
-                    array[i] =Integer.parseInt(inputArray[i]);
-//                    System.out.println(array[i]);
-                }
-                catch (Exception EX)
-                {
-                    System.out.println("input is not in a number format");
+                    System.out.println("not in valid range for integer array");
+                    return null;
                 }
             }
+            catch (Exception EX)
+            {
+                System.out.println("input is not in a number format");
+                return null;
+            }
         }
+        return  numArray;
     }
 
-    public int[] twoSum(int[] nums, int target) {
-    int [] result= new int[2];
-    return result;
-    }
 
 }
