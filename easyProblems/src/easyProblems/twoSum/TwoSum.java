@@ -1,4 +1,4 @@
-package easyProblems.TwoSum;//        Given an array of integers nums and an integer target,
+package easyProblems.twoSum;//        Given an array of integers nums and an integer target,
 //        return indices of the two numbers such that they add up to target.
 //        You may assume that each input would have exactly one solution,
 //         and you may not use the same element twice.
@@ -13,9 +13,6 @@ Input: nums = [2,7,11,15], target = 9
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 public class TwoSum {
     public  static int[] twoSum(int[] nums, int target) {

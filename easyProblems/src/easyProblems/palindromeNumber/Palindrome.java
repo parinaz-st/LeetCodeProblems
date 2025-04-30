@@ -1,4 +1,4 @@
-package easyProblems.PalindromeNumber;
+package easyProblems.palindromeNumber;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,6 @@ public class Palindrome
 
         int palindrome1 = 123;
         boolean resault = IsPalindrome2(palindrome1);
-
 
 
 //        int palindrome2 = (palindrome1 % 10) * (int)Math.pow(10, digitCount-1) +
