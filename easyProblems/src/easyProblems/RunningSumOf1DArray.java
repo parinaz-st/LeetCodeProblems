@@ -1,4 +1,4 @@
-package easyProblems.runningSumof1dArray;
+package easyProblems;
 
 public class RunningSumOf1DArray {
     /**

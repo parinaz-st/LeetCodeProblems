@@ -1,9 +1,9 @@
-package easyProblems.palindromeNumber;
+package easyProblems;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Palindrome
+public class PalindromeNumber
 
 {
     public static void main(String[] args) {

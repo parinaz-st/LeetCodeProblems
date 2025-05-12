@@ -1,4 +1,4 @@
-package easyProblems.fizzBuzz;
+package easyProblems;
 
 import java.util.ArrayList;
 import java.util.List;
