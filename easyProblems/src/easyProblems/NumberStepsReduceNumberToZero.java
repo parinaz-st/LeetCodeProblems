@@ -37,7 +37,8 @@ public class NumberStepsReduceNumberToZero {
      * space - > 0(1)
      */
     public static void main(String[] args) {
-        System.out.println(numberOfSteps(14));
+        System.out.println("normal solution: " + numberOfSteps(14));
+        System.out.println("bit operation solution: " + numberOfSteps(14));
     }
 
     public static int numberOfSteps(int num) {
@@ -54,5 +55,21 @@ public class NumberStepsReduceNumberToZero {
         }
         return step;
     }
+    public static int numberOfStepsBitWiseOperation(int num) {
+        int step = 0;
+        if(num < 0 || num > 1000000)
+            return 0;
+        while(num != 0){
+            if( (num & 1) == 0){
+                // zoj - shift be rast - taghsim bar 2
+                num >>= 1;
+            }
+            else{
+                num --;
+            }
+            step++;
+        }
+        return step;
+    }
 
-}
+    }
